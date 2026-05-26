@@ -1,0 +1,71 @@
+.kilbury {
+    background-image: url("img/castle2.jpeg");
+}
+
+.city-header{
+    position: relative;
+    height: 100vh;
+
+    background-image: url("img/castle2.jpeg");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    text-align: center;
+    color: rgb(246, 245, 245);
+
+    overflow: hidden;
+}
+
+/* dark overlay for contrast */
+.city-header::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 0;
+}
+
+/* text ABOVE overlay */
+.city-header h1,
+.city-header p{
+    position: relative;
+    z-index: 1;
+}
+
+.city-header::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 6, 11, 0.324);
+}
+
+header,
+.city-header{
+    height: 70vh;
+    margin: 0;
+    border: none;
+}
+
+.about-card{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+}
+
+.city-section{
+    margin: 20px auto;
+    padding: 20px;
+    width: min(95%, 850px);
+}
+
+.gallery-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
