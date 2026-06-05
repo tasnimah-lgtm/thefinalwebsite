@@ -218,7 +218,9 @@ header p{
 
 /* TABS */
 .city-tabs{
-    justify-content: center !important;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .city-tabs .nav-link{
@@ -231,22 +233,22 @@ header p{
     background-color: rgba(249, 252, 251, 0.901);
     color: rgb(16, 19, 20);
 
-    border: 1.5px solid black !important;
+    border: 1.5px solid black;
     transition: 0.3s;
 }
 
 .city-tabs .nav-link:hover{
-    background-color: rgb(125, 220, 239) !important;
-    color: #333 !important;
+    background-color: rgb(125, 220, 239);
+    color: #333;
 }
 
 
 
 .city-tabs .nav-link.active{
     
-    color: #000 !important;
+    color: #000 !;
     border-radius: 20px;
-    border: 1.5px solid black !important;
+    border: 1.5px solid black;
 }
 /* PHOTO GALLERY */
 .photo-gallery{
@@ -312,8 +314,8 @@ main{
 @media (prefers-reduced-motion: reduce){
 
     *{
-        transition: none !important;
-        animation: none !important;
+        transition: none;
+        animation: none;
     }
 
     .gallery img,
@@ -321,7 +323,7 @@ main{
     .gallery img:nth-child(1),
     .gallery img:nth-child(2),
     .gallery img:nth-child(3){
-        transform: none !important;
+        transform: none;
     }
 }
 
@@ -352,4 +354,50 @@ main{
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
+}
+
+
+/* PAGE BACKGROUNDS */
+
+.belfast{
+    background-image: url("img/acla.jpeg");
+}
+
+.galway{
+    background-image: url("img/bikes.jpeg");
+}
+
+.kilruddery{
+    background-image: url("img/castle2.jpeg");
+}
+
+.malahide{
+    background-image: url("img/mushroom.jpeg");
+}
+
+
+.city-header::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+}
+
+.city-header h1,
+.city-header p{
+    position: relative;
+    z-index: 1;
+}
+
+.gallery-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.about-card{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
 }
